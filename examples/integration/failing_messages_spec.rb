@@ -47,12 +47,14 @@ describe "Failing Messages" do
 
   context "when returning false from ToBool" do
     Given(:failing_test) { "to_bool_returns_false.rb" }
-    Then { ios.out =~ /Failure\/Error: Then \{ ToBool.new \}/ }
+    Then { ios.out =~ /Failure\/Error:/ }
+    And  { ios.out =~ /Then \{ ToBool.new \}/ }
   end
 
   context "with an oddly formatted then" do
     Given(:failing_test) { "oddly_formatted_then.rb" }
-    Then { ios.out =~ /Failure\/Error: Then \{ result == \['a',$/ }
+    Then { ios.out =~ /Failure\/Error:/ }
+    And  { ios.out =~ /Then \{ result == \['a',$/ }
     And  { ios.out =~ /expected: "anything"/ }
     And  { ios.out =~ /to equal: \["a", "a"\]/ }
   end
