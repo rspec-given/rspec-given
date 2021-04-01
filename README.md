@@ -711,10 +711,10 @@ There are several ways of creating fuzzy numbers:
   (n-d)..(n+d)
 
 * <code>about(n).percent(p)</code> -- A fuzzy number matching the
-  range (n-(n*p/100)) .. (n+(n*p/100))
+  range (n-(n * p/100)) .. (n+(n * p/100))
 
 * <code>about(n).epsilon(neps)</code> -- A fuzzy number matching the
-  range (n-(neps*e)) .. (n+(neps*e)), where e is the difference
+  range (n-(neps * e)) .. (n+(neps * e)), where e is the difference
   between 1.0 and the next smallest floating point number.
 
 * <code>about(n)</code> -- Same as <code>about(n).epsilon(10)</code>.
